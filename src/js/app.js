@@ -1,4 +1,4 @@
-// full logging system)
+// full logging system
 window['FLS'] = true
 
 // main styles
@@ -113,7 +113,7 @@ import * as scroll from './files/scroll/scroll.js'
 // scroll.pageNavigation();
 
 // adding classes to the header on scroll
-// scroll.headerScroll();
+scroll.headerScroll();
 
 // sticky block
 // scroll.stickyBlock();

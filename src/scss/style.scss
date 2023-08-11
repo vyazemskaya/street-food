@@ -6,11 +6,8 @@
 
 // fonts =======================================================================
 
-// &display=swap
-
-
 // local fonts
-// @import "fonts/fonts";
+@import 'fonts/fonts';
 
 // icons font
 // @import "fonts/icons";
@@ -18,7 +15,8 @@
 // variables ===================================================================
 
 // main colors
-$mainColor: #262525; // default font color
+$purple: #1e1121;
+$orange: #f4a312;
 
 // base styles file ============================================================
 @import 'base/set.scss';

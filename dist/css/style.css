@@ -1,3 +1,59 @@
+@font-face {
+  font-family: AkzidenzGroteskPro;
+  font-display: swap;
+  src: url("../fonts/AkzidenzGroteskPro-BoldEx.woff2") format("woff2"), url("../fonts/AkzidenzGroteskPro-BoldEx.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: AkzidenzGroteskPro;
+  font-display: swap;
+  src: url("../fonts/AkzidenzGroteskPro-MdEx.woff2") format("woff2"), url("../fonts/AkzidenzGroteskPro-MdEx.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Autography;
+  font-display: swap;
+  src: url("../fonts/Autography.woff2") format("woff2"), url("../fonts/Autography.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: DrukCyr;
+  font-display: swap;
+  src: url("../fonts/DrukCyr-Bold.woff2") format("woff2"), url("../fonts/DrukCyr-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: DrukCyr;
+  font-display: swap;
+  src: url("../fonts/DrukCyr-Medium.woff2") format("woff2"), url("../fonts/DrukCyr-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Euclid Circular A Bold";
+  font-display: swap;
+  src: url("../fonts/Euclid Circular A Bold.woff2") format("woff2"), url("../fonts/Euclid Circular A Bold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Euclid Circular A Medium";
+  font-display: swap;
+  src: url("../fonts/Euclid Circular A Medium.woff2") format("woff2"), url("../fonts/Euclid Circular A Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -6,7 +62,7 @@
 }
 
 html {
-  font-family: "Euclid Circular A";
+  font-family: "Euclid Circular A Medium";
   font-size: 0.5208335vw;
   font-style: normal;
   font-weight: normal;
@@ -23,8 +79,9 @@ body {
   line-height: 1.2;
   margin: 0;
   padding: 0;
-  color: #262525;
-  background-color: #FFFFFF;
+  color: #ffffff;
+  background-color: #ffffff;
+  font-size: 1.8rem;
 }
 
 input,
@@ -113,7 +170,7 @@ ul li {
 }
 
 .container {
-  width: 141rem;
+  width: 163rem;
   margin: 0 auto;
 }
 
@@ -176,6 +233,109 @@ section {
 [class*=-ibg_contain] img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 18rem;
+  background-color: #1e1121;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header._header-scroll {
+  height: 10rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header._header-scroll .header__logo {
+  width: 19rem;
+}
+
+.header._header-scroll .menu__link::after {
+  -webkit-transform: translate(28%, -80%) rotate(-5.18deg) scale(0);
+      -ms-transform: translate(28%, -80%) rotate(-5.18deg) scale(0);
+          transform: translate(28%, -80%) rotate(-5.18deg) scale(0);
+}
+
+.header._header-scroll .menu__link-txt {
+  font-size: 1.8rem;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 3rem;
+     -moz-column-gap: 3rem;
+          column-gap: 3rem;
+  height: 100%;
+}
+
+.header__logo {
+  width: 33.2rem;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+
+.header__logo-img {
+  max-width: 100%;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3.3rem;
+     -moz-column-gap: 3.3rem;
+          column-gap: 3.3rem;
+}
+
+.menu__link_labeled {
+  position: relative;
+}
+
+.menu__link_labeled .menu__link-txt {
+  position: relative;
+  z-index: 2;
+}
+
+.menu__link_labeled::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7.4rem;
+  height: 5rem;
+  background-image: url(../img/label-hot.svg);
+  background-size: 7.4rem;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(28%, -80%) rotate(-5.18deg);
+      -ms-transform: translate(28%, -80%) rotate(-5.18deg);
+          transform: translate(28%, -80%) rotate(-5.18deg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.menu__link-txt {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  -webkit-transition: font-size 0.3s ease;
+  transition: font-size 0.3s ease;
 }
 
 /*
