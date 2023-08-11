@@ -1,0 +1,131 @@
+// @import "base/forms/forms";
+
+// popup styles
+// @import "base/popup";
+
+// spoiler styles
+// @import "base/spoilers";
+
+// tab styles
+// @import "base/tabs";
+
+// map styles
+// @import "base/maps";
+
+// showmore styles
+// @import "base/showmore";
+
+// fullscreen styles
+// @import "base/fullscreen";
+
+// sticky block styles
+// @import "base/sticky";
+
+// ibg styles
+[class*='-ibg'] {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+[class*='-ibg_contain'] {
+  img {
+    object-fit: contain;
+  }
+}
+
+// templates ===================================================================
+
+// @extend %pattern name;
+// snippet ( SCSS ): ex
+
+// list counter
+%listCounter {
+  list-style-type: none;
+  counter-reset: item;
+  li {
+    position: relative;
+    &:before {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+// responsive video
+%responsiveVideo {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+  video,
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// video as background
+%videoBackground {
+  video,
+  iframe,
+  object,
+  embed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+  }
+}
+
+// gray filter
+%grayfilter {
+  transition: all 0.3s ease 0s;
+  filter: grayscale(1);
+  @media (any-hover: hover) {
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+// no select
+%noselect {
+  user-select: none;
+}
+
+// mirror reflection
+%mirror {
+  transform: scale(-1, 1);
+}
+
+// smooth scroll
+%smoothscroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+// hide scroll
+%hidescroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
