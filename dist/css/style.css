@@ -230,25 +230,6 @@ section {
   padding-top: 10rem;
 }
 
-[class*=-ibg] {
-  position: relative;
-}
-
-[class*=-ibg] img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-[class*=-ibg_contain] img {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .circle {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -659,52 +640,36 @@ section {
   z-index: 5;
 }
 
-.carousel-hero-mainpage__item._prev .carousel-hero-mainpage__image-ibg {
-  -webkit-transform: translateY(-20%) rotate(-10deg);
-      -ms-transform: translateY(-20%) rotate(-10deg);
-          transform: translateY(-20%) rotate(-10deg);
+.carousel-hero-mainpage__item._prev img {
+  rotate: -18deg;
 }
 
 .carousel-hero-mainpage__item._prev .carousel-hero-mainpage__group {
-  -webkit-transform: translate(-100%, -100%);
-      -ms-transform: translate(-100%, -100%);
-          transform: translate(-100%, -100%);
+  left: -50vw;
+  top: -100vh;
 }
 
-.carousel-hero-mainpage__item._next .carousel-hero-mainpage__image-ibg {
-  -webkit-transform: rotate(30deg);
-      -ms-transform: rotate(30deg);
-          transform: rotate(30deg);
+.carousel-hero-mainpage__item._next img {
+  rotate: 45deg;
 }
 
 .carousel-hero-mainpage__item._next .carousel-hero-mainpage__group {
-  -webkit-transform: translate(100%, 100%);
-      -ms-transform: translate(100%, 100%);
-          transform: translate(100%, 100%);
+  left: 50vw;
+  top: 100vh;
 }
 
-.carousel-hero-mainpage__item._active .carousel-hero-mainpage__image-ibg {
-  -webkit-transform: rotate(-6deg) translateX(7%) scale(1.9);
-      -ms-transform: rotate(-6deg) translateX(7%) scale(1.9);
-          transform: rotate(-6deg) translateX(7%) scale(1.9);
+.carousel-hero-mainpage__image_scaled img {
+  -webkit-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+          transform: scale(0.6);
 }
 
-.carousel-hero-mainpage__image-ibg {
-  padding-bottom: 30%;
-  -webkit-transition: all 0.8s linear;
-  transition: all 0.8s linear;
-}
-
-.carousel-hero-mainpage__image-ibg img {
-  top: 50%;
-  left: 50%;
-  width: 60rem;
+.carousel-hero-mainpage__image img {
+  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  cursor: pointer;
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
 }
 
 .carousel-hero-mainpage__group,
@@ -722,6 +687,8 @@ section {
   height: 100%;
   top: 0;
   left: 0;
+  -webkit-transition: top, left 0.8s ease;
+  transition: top, left 0.8s ease;
 }
 
 .carousel-hero-mainpage__group::before,
@@ -735,37 +702,37 @@ section {
 .carousel-hero-mainpage__group::before {
   content: url(../img/hero/ellipses/03.png);
   top: -47%;
-  left: 59%;
-  -webkit-transform: scale(0.3);
-      -ms-transform: scale(0.3);
-          transform: scale(0.3);
+  left: 68%;
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .carousel-hero-mainpage__group::after {
   content: url(../img/hero/ellipses/04.png);
-  top: 95%;
-  left: 45%;
-  -webkit-transform: scale(0.3);
-      -ms-transform: scale(0.3);
-          transform: scale(0.3);
+  top: 11%;
+  left: 11%;
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
 }
 
 .carousel-hero-mainpage__group span::before {
   content: url(../img/hero/ellipses/01.png);
-  top: -1%;
-  left: 28%;
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  top: 123%;
+  left: -9%;
+  -webkit-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+          transform: scale(0.6);
 }
 
 .carousel-hero-mainpage__group span::after {
   content: url(../img/hero/ellipses/02.png);
   top: 101%;
-  left: 17%;
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  left: 77%;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .carousel-hero-mainpage__wheel {

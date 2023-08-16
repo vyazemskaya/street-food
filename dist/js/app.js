@@ -3649,9 +3649,10 @@
                                 path: outerPath,
                                 align: outerPath,
                                 alignOrigin: [ .5, .5 ],
+                                start: .12,
                                 end: i => gsap.utils.wrap(0, 1, i / items.length - .12)
                             },
-                            scale: .6
+                            scale: .5
                         });
                         const tl = gsap.timeline({
                             paused: true,
@@ -3719,11 +3720,10 @@
                                     progress: wrapProgress
                                 }
                             });
-                            console.log(rt);
                             gsap.fromTo(dots, {
                                 rotation: rt
                             }, {
-                                rotation: rt * 1.4,
+                                rotation: rt,
                                 duration: 1
                             });
                         }

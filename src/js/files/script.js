@@ -48,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
             path: outerPath,
             align: outerPath,
             alignOrigin: [0.5, 0.5],
+            start: 0.12,
             end: i => gsap.utils.wrap(0, 1, i / items.length - 0.12),
           },
-          scale: 0.6,
+          scale: 0.5,
         })
 
         const tl = gsap.timeline({ paused: true, reversed: true })
@@ -162,14 +163,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
               progress: wrapProgress,
             },
           })
-          console.log(rt)
           gsap.fromTo(
             dots,
             {
               rotation: rt,
             },
             {
-              rotation: rt * 1.4,
+              rotation: rt,
               duration: 1,
             }
           )
