@@ -61,14 +61,14 @@ function initSliders() {
           }
           if (document.querySelector('.hero-mainpage__control')) {
             document
-              .querySelector('.hero-mainpage__arrow_next')
+              .getElementById('heroNext')
               .addEventListener('click', function () {
                 if (!document.documentElement.classList.contains('_rotate')) {
                   swiper.slideNext()
                 }
               })
             document
-              .querySelector('.hero-mainpage__arrow_prev')
+              .getElementById('heroPrev')
               .addEventListener('click', function () {
                 if (!document.documentElement.classList.contains('_rotate')) {
                   swiper.slidePrev()
@@ -85,6 +85,41 @@ function initSliders() {
           }
         },
       },
+    })
+  }
+  if (document.querySelector('.popular-mainpage__slider')) {
+    new Swiper('.popular-mainpage__slider', {
+      modules: [Navigation, Pagination],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 3,
+      spaceBetween: 35,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      simulateTouch: false,
+      // loop: true,
+
+      // effects
+      // effect: 'fade',
+
+      // pagination
+      pagination: {
+        el: '.control-popular-mainpage__fraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          return '0' + current + '/' + '0' + total
+        },
+      },
+
+      // navigation
+      navigation: {
+        nextEl: '.control-popular-mainpage__nav-btn_next',
+        prevEl: '.control-popular-mainpage__nav-btn_prev',
+      },
+
+      // events
+      on: {},
     })
   }
 }

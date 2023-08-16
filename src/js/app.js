@@ -30,7 +30,7 @@ utilities.addLoadedClass()
 
 // tabs module
 // snippet ( HTML ): tabs
-// utilities.tabs()
+utilities.tabs()
 
 // show more module
 // snippet ( HTML ): showmore

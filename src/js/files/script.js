@@ -1,8 +1,25 @@
-import { isMobile } from './functions.js'
+import { _slideDown, _slideUp, _slideToggle } from './functions.js'
 import { modules } from './modules.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   window.onload = function () {
+    if (document.querySelectorAll('.popular-mainpage__slide')) {
+      const popularSlides = document.querySelectorAll(
+        '.popular-mainpage__slide'
+      )
+
+      // $('.popular-mainpage__slide').each(function (index, item) {
+      //   const slideInfo = $(item).find('.slide-popular-mainpage__info')[0]
+
+      //   $(item).on('mouseover', function (event) {
+      //     $(slideInfo).animate({ height: 'auto' }, 10)
+      //   })
+      //   $(item).on('mouseout', function (event) {
+      //     $(slideInfo).animate({ height: 0 }, 10)
+      //   })
+      // })
+    }
+
     window.requestAnimationFrame(function () {
       const setClasses = (arr, activeIndex) => {
         document
@@ -114,30 +131,34 @@ document.addEventListener('DOMContentLoaded', function (event) {
           })
         })
 
-        document.getElementById('next').addEventListener('click', function () {
-          var i = 0
+        document
+          .getElementById('heroNext')
+          .addEventListener('click', function () {
+            var i = 0
 
-          var theArray = items
-          var currentIndex = 0
+            var theArray = items
+            var currentIndex = 0
 
-          if (!document.documentElement.classList.contains('_rotate')) {
-            if (i === 0) {
-              theArray[currentIndex]
-            } else if (i < 0) {
-              theArray[(currentIndex + theArray.length + i) % theArray.length]
-            } else if (i > 0) {
-              theArray[(currentIndex + i) % theArray.length]
+            if (!document.documentElement.classList.contains('_rotate')) {
+              if (i === 0) {
+                theArray[currentIndex]
+              } else if (i < 0) {
+                theArray[(currentIndex + theArray.length + i) % theArray.length]
+              } else if (i > 0) {
+                theArray[(currentIndex + i) % theArray.length]
+              }
+
+              return moveWheel(-itemStep)
             }
+          })
 
-            return moveWheel(-itemStep)
-          }
-        })
-
-        document.getElementById('prev').addEventListener('click', function () {
-          if (!document.documentElement.classList.contains('_rotate')) {
-            return moveWheel(itemStep)
-          }
-        })
+        document
+          .getElementById('heroPrev')
+          .addEventListener('click', function () {
+            if (!document.documentElement.classList.contains('_rotate')) {
+              return moveWheel(itemStep)
+            }
+          })
 
         function moveWheel(amount, i, index) {
           let progress = tl.progress()
@@ -176,135 +197,153 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
       }
       // hero title
-      gsap.fromTo(
-        '.slide-hero-mainpage__title',
-        {
-          xPercent: 100,
-          delay: 1,
-        },
-        { xPercent: 0, duration: 2 }
-      )
+      if (document.querySelector('.slide-hero-mainpage__title')) {
+        gsap.fromTo(
+          '.slide-hero-mainpage__title',
+          {
+            xPercent: 100,
+            delay: 1,
+          },
+          { xPercent: 0, duration: 2 }
+        )
+      }
 
-      // hero circle link
-      let heroCircleTl = gsap.timeline()
-      heroCircleTl.from('.slide-hero-mainpage__circle', {
-        xPercent: -100,
-        rotation: -11.311,
-        duration: 1,
-        delay: 1,
-      })
-      heroCircleTl.to('.slide-hero-mainpage__circle', {
-        xPercent: 5,
-        rotation: 12,
-        duration: 0.5,
-      })
-      heroCircleTl.to('.slide-hero-mainpage__circle', {
-        xPercent: 0,
-        rotation: 11.311,
-        duration: 0.5,
-      })
+      // hero button
+      if (document.querySelector('.slide-hero-mainpage__button')) {
+        let heroCircleTl = gsap.timeline()
+        heroCircleTl.from('.slide-hero-mainpage__button', {
+          xPercent: -100,
+          rotation: -11.311,
+          duration: 1,
+          delay: 1,
+        })
+        heroCircleTl.to('.slide-hero-mainpage__button', {
+          xPercent: 5,
+          rotation: 12,
+          duration: 0.5,
+        })
+        heroCircleTl.to('.slide-hero-mainpage__button', {
+          xPercent: 0,
+          rotation: 11.311,
+          duration: 0.5,
+        })
+      }
 
       // hero text
-      let heroTxtTl = gsap.timeline()
-      heroTxtTl.from('.slide-hero-mainpage__text', {
-        xPercent: 500,
-        duration: 1.5,
-        delay: 1,
-      })
-      heroTxtTl.to('.slide-hero-mainpage__text', {
-        xPercent: 1,
-        duration: 0.6,
-      })
-      heroTxtTl.to('.slide-hero-mainpage__text', {
-        xPercent: 2,
-        duration: 1.5,
-      })
+      if (document.querySelector('.slide-hero-mainpage__text')) {
+        let heroTxtTl = gsap.timeline()
+        heroTxtTl.from('.slide-hero-mainpage__text', {
+          xPercent: 500,
+          duration: 1.5,
+          delay: 1,
+        })
+        heroTxtTl.to('.slide-hero-mainpage__text', {
+          xPercent: 1,
+          duration: 0.6,
+        })
+        heroTxtTl.to('.slide-hero-mainpage__text', {
+          xPercent: 2,
+          duration: 1.5,
+        })
+      }
 
       // hero label
-      gsap.fromTo(
-        '.slide-hero-mainpage .title__label',
-        {
-          yPercent: 46,
-          xPercent: 70,
-          rotation: -5.43,
-        },
-        {
-          yPercent: 28,
-          xPercent: 60,
-          rotation: -5.43,
-          duration: 1,
-          delay: 0.5,
-        }
-      )
+      if (document.querySelector('.slide-hero-mainpage .title__label')) {
+        gsap.fromTo(
+          '.slide-hero-mainpage .title__label',
+          {
+            yPercent: 46,
+            xPercent: 70,
+            rotation: -5.43,
+          },
+          {
+            yPercent: 28,
+            xPercent: 60,
+            rotation: -5.43,
+            duration: 1,
+            delay: 0.5,
+          }
+        )
+      }
 
       // hero control
-      gsap.fromTo(
-        '.hero-mainpage__control',
-        {
-          yPercent: 25,
-          opacity: 0,
-        },
-        {
-          yPercent: 0,
-          opacity: 1,
-          duration: 1.5,
-          delay: 1,
-        }
-      )
+      if (document.querySelector('.hero-mainpage__control')) {
+        gsap.fromTo(
+          '.hero-mainpage__control',
+          {
+            yPercent: 25,
+            opacity: 0,
+          },
+          {
+            yPercent: 0,
+            opacity: 1,
+            duration: 1.5,
+            delay: 1,
+          }
+        )
+      }
 
       // hero fraction
-      gsap.fromTo(
-        '.hero-mainpage__fraction',
-        {
-          yPercent: 100,
-        },
-        {
-          yPercent: 0,
-          duration: 1.5,
-          delay: 1,
-        }
-      )
+      if (document.querySelector('.hero-mainpage__fraction')) {
+        gsap.fromTo(
+          '.hero-mainpage__fraction',
+          {
+            yPercent: 100,
+          },
+          {
+            yPercent: 0,
+            duration: 1.5,
+            delay: 1,
+          }
+        )
+      }
 
       // hero outer wheel
-      gsap.fromTo(
-        '.carousel-hero-mainpage__wheel_outer',
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1.5,
-          delay: 1,
-        }
-      )
+      if (document.querySelector('.carousel-hero-mainpage__wheel_outer')) {
+        gsap.fromTo(
+          '.carousel-hero-mainpage__wheel_outer',
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 1.5,
+            delay: 1,
+          }
+        )
+      }
 
       // hero inner wheel
-      gsap.fromTo(
-        '.carousel-hero-mainpage__wheel_inner',
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1.5,
-          delay: 1,
-        }
-      )
+      if (document.querySelector('.carousel-hero-mainpage__wheel_inner')) {
+        gsap.fromTo(
+          '.carousel-hero-mainpage__wheel_inner',
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 1.5,
+            delay: 1,
+          }
+        )
+      }
 
       // hero images
-      gsap.fromTo(
-        '.carousel-hero-mainpage__items',
-        {
-          xPercent: -100,
-          rotation: -18,
-        },
-        {
-          xPercent: 0,
-          rotation: 2,
-          duration: 1.5,
-          delay: 1.5,
-        }
-      )
+      if (document.querySelector('.carousel-hero-mainpage__items')) {
+        gsap.fromTo(
+          '.carousel-hero-mainpage__items',
+          {
+            xPercent: -100,
+            rotation: -18,
+          },
+          {
+            xPercent: 0,
+            rotation: 2,
+            duration: 1.5,
+            delay: 1.5,
+          }
+        )
+      }
 
       // header
       gsap.fromTo(

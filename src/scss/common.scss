@@ -1,4 +1,4 @@
-.circle {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -17,15 +17,8 @@
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0.99);
   }
-  @media (any-hover: hover) {
-    &:hover {
-      &::after {
-        animation: circle-link 2s ease 0.3s;
-      }
-    }
-  }
 
-  // .circle__text
+  // .button__text
 
   &__text {
     position: relative;
@@ -37,6 +30,15 @@
     line-height: 125%;
     letter-spacing: 0.56px;
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        animation: circle-link 2s ease 0.3s;
+      }
+    }
   }
 }
 
@@ -74,6 +76,58 @@
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10.4rem;
+  height: 10.4rem;
+  background-color: #f1f0f9;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $purple;
+      path {
+        stroke: #ffffff;
+      }
+    }
+  }
+}
+
+.aside {
+  position: absolute;
+  z-index: 60;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 7.2rem;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 90px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  &.swiper-button-disabled {
+    path {
+      stroke: #d7d4de;
+    }
+  }
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 

@@ -42,6 +42,18 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  &::after {
+    content: '';
+    position: fixed;
+    z-index: 50;
+    width: 7.2rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(189, 180, 191, 0.1);
+    backdrop-filter: blur(25px);
+  }
+
   // press footer
   > main {
     flex: 1 1 auto;
