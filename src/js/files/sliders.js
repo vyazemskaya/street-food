@@ -1,4 +1,4 @@
-import Swiper, { Navigation } from 'swiper'
+import Swiper, { Navigation, EffectFade, Pagination } from 'swiper'
 
 // styles ======================================================================
 
@@ -13,77 +13,78 @@ import '../../scss/base/swiper.scss'
 
 // launch ======================================================================
 function initSliders() {
-  if (document.querySelector('.swiper')) {
-    new Swiper('.swiper', {
-      modules: [Navigation],
+  if (document.querySelector('.hero-mainpage__slider')) {
+    new Swiper('.hero-mainpage__slider', {
+      modules: [EffectFade, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 1,
       spaceBetween: 0,
-      autoHeight: true,
+      autoHeight: false,
       speed: 800,
+      allowTouchMove: false,
+      simulateTouch: false,
+      loop: true,
 
-      //touchRatio: 0,
-      //simulateTouch: false,
-      //loop: true,
-      //preloadImages: false,
-      //lazy: true,
-
-      /*
-			// effects
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
+      // effects
+      effect: 'fade',
 
       // pagination
-      /*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-      // scrollbar
-      /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-      // navigation
-      navigation: {
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next',
+      pagination: {
+        el: '.hero-mainpage__fraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          return '0' + current
+        },
       },
 
-      // breakpoints
-      /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
       // events
-      on: {},
+      on: {
+        init: function () {
+          const swiper = this
+          const arr = Array.from(
+            document.querySelectorAll('.carousel-hero-mainpage__item')
+          )
+
+          if (arr.length) {
+            let activeIndex = arr.indexOf(
+              document.querySelector('.carousel-hero-mainpage__item._active')
+            )
+
+            swiper.slideTo(activeIndex)
+            arr.forEach(item => {
+              item.addEventListener('click', function () {
+                activeIndex = arr.indexOf(item)
+                swiper.slideTo(activeIndex)
+              })
+            })
+          }
+          if (document.querySelector('.hero-mainpage__control')) {
+            document
+              .querySelector('.hero-mainpage__arrow_next')
+              .addEventListener('click', function () {
+                if (!document.documentElement.classList.contains('_rotate')) {
+                  swiper.slideNext()
+                }
+              })
+            document
+              .querySelector('.hero-mainpage__arrow_prev')
+              .addEventListener('click', function () {
+                if (!document.documentElement.classList.contains('_rotate')) {
+                  swiper.slidePrev()
+                }
+              })
+          }
+        },
+        onSlideChangeEnd: function () {
+          if (
+            this.slides.length == this.activeIndex + 1 &&
+            !document.documentElement.classList.contains('_rotate')
+          ) {
+            this.swipeTo(0)
+          }
+        },
+      },
     })
   }
 }

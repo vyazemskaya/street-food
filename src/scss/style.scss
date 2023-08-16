@@ -15,8 +15,10 @@
 // variables ===================================================================
 
 // main colors
-$purple: #1e1121;
+$purple: #912da8;
 $orange: #f4a312;
+$black: #1e1121;
+$red: #ff5f2d;
 
 // base styles file ============================================================
 @import 'base/set.scss';
@@ -31,11 +33,12 @@ body {
   }
   // site is loaded
   .loaded & {
+    opacity: 1;
   }
 }
 
 .wrapper {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -46,6 +49,14 @@ body {
   // fix for sliders
   > * {
     min-width: 0;
+  }
+}
+
+.main {
+  padding-top: 18rem;
+  transition: padding-top 0.3s ease;
+  ._header-scroll & {
+    padding-top: 10rem;
   }
 }
 

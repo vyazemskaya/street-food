@@ -223,13 +223,11 @@ export function spoilers() {
   const spoilersArray = document.querySelectorAll('[data-spoilers]')
   if (spoilersArray.length > 0) {
     // get regular spoilers
-    const spoilersRegular = Array.from(spoilersArray).filter(function (
-      item,
-      index,
-      self
-    ) {
-      return !item.dataset.spoilers.split(',')[0]
-    })
+    const spoilersRegular = Array.from(spoilersArray).filter(
+      function (item, index, self) {
+        return !item.dataset.spoilers.split(',')[0]
+      }
+    )
     // regular spoilers initialization
     if (spoilersRegular.length) {
       initSpoilers(spoilersRegular)
@@ -354,11 +352,9 @@ export function tabs() {
       initTabs(tabsBlock)
     })
 
-    // get spoilers with media queries
     let mdQueriesArray = dataMediaQueries(tabs, 'tabs')
     if (mdQueriesArray && mdQueriesArray.length) {
       mdQueriesArray.forEach(mdQueriesItem => {
-        // event
         mdQueriesItem.matchMedia.addEventListener('change', function () {
           setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia)
         })
@@ -366,7 +362,6 @@ export function tabs() {
       })
     }
   }
-  // setting title positions
   function setTitlePosition(tabsMediaArray, matchMedia) {
     tabsMediaArray.forEach(tabsMediaItem => {
       tabsMediaItem = tabsMediaItem.item
@@ -392,9 +387,9 @@ export function tabs() {
       })
     })
   }
-  // content
   function initTabs(tabsBlock) {
     let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*')
+    let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*')
     const tabsBlockIndex = tabsBlock.dataset.tabsIndex
     const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex
 
@@ -519,13 +514,11 @@ export function showMore() {
     let mdQueriesArray
     if (showMoreBlocks.length) {
       // get regular objects
-      showMoreBlocksRegular = Array.from(showMoreBlocks).filter(function (
-        item,
-        index,
-        self
-      ) {
-        return !item.dataset.showmoreMedia
-      })
+      showMoreBlocksRegular = Array.from(showMoreBlocks).filter(
+        function (item, index, self) {
+          return !item.dataset.showmoreMedia
+        }
+      )
       // regular objects initialization
       showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null
 

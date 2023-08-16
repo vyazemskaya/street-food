@@ -93,34 +93,34 @@ export function headerScroll() {
     const scrollTop = window.scrollY
     clearTimeout(timer)
     if (scrollTop >= startPoint) {
-      !header.classList.contains('_header-scroll')
-        ? header.classList.add('_header-scroll')
+      !document.documentElement.classList.contains('_header-scroll')
+        ? document.documentElement.classList.add('_header-scroll')
         : null
       if (headerShow) {
         if (scrollTop > scrollDirection) {
           // downscroll code
-          header.classList.contains('_header-show')
-            ? header.classList.remove('_header-show')
+          document.documentElement.classList.contains('_header-show')
+            ? document.documentElement.classList.remove('_header-show')
             : null
         } else {
           // upscroll code
-          !header.classList.contains('_header-show')
-            ? header.classList.add('_header-show')
+          !document.documentElement.classList.contains('_header-show')
+            ? document.documentElement.classList.add('_header-show')
             : null
         }
         timer = setTimeout(() => {
-          !header.classList.contains('_header-show')
-            ? header.classList.add('_header-show')
+          !document.documentElement.classList.contains('_header-show')
+            ? document.documentElement.classList.add('_header-show')
             : null
         }, headerShowTimer)
       }
     } else {
-      header.classList.contains('_header-scroll')
-        ? header.classList.remove('_header-scroll')
+      document.documentElement.classList.contains('_header-scroll')
+        ? document.documentElement.classList.remove('_header-scroll')
         : null
       if (headerShow) {
-        header.classList.contains('_header-show')
-          ? header.classList.remove('_header-show')
+        document.documentElement.classList.contains('_header-show')
+          ? document.documentElement.classList.remove('_header-show')
           : null
       }
     }
