@@ -89,6 +89,9 @@
   background-color: #f1f0f9;
   border-radius: 50%;
   transition: all 0.3s ease;
+  &_orange {
+    background-color: $orange;
+  }
   &_purple {
     background-color: $purple;
   }
