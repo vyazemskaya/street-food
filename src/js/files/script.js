@@ -345,6 +345,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
         )
       }
 
+      // hero socials
+      gsap.fromTo(
+        '.hero-mainpage__socials',
+        {
+          xPercent: 100,
+        },
+        {
+          xPercent: 0,
+          duration: 1.3,
+          delay: 0.5,
+        }
+      )
+
       // header
       gsap.fromTo(
         '.header',
@@ -353,6 +366,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
         },
         {
           yPercent: 0,
+          duration: 1.3,
+          delay: 0.5,
+        }
+      )
+
+      // aside
+      gsap.fromTo(
+        '.fascia',
+        {
+          xPercent: 100,
+        },
+        {
+          xPercent: 0,
           duration: 1.3,
           delay: 0.5,
         }

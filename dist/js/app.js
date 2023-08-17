@@ -3951,15 +3951,38 @@
                 allowTouchMove: false,
                 simulateTouch: false,
                 pagination: {
-                    el: ".control-popular-mainpage__fraction",
+                    el: "#popularFraction",
                     type: "custom",
                     renderCustom: function(swiper, current, total) {
                         return "0" + current + "/" + "0" + total;
                     }
                 },
                 navigation: {
-                    nextEl: ".control-popular-mainpage__nav-btn_next",
-                    prevEl: ".control-popular-mainpage__nav-btn_prev"
+                    nextEl: "#popularNext",
+                    prevEl: "#popularPrev"
+                },
+                on: {}
+            });
+            if (document.querySelector(".offers-mainpage__slider")) new core(".offers-mainpage__slider", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 2,
+                spaceBetween: 60,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                simulateTouch: false,
+                pagination: {
+                    el: "#offersFraction",
+                    type: "custom",
+                    renderCustom: function(swiper, current, total) {
+                        return "0" + current + "/" + "0" + total;
+                    }
+                },
+                navigation: {
+                    nextEl: "#offersNext",
+                    prevEl: "#offersPrev"
                 },
                 on: {}
             });
@@ -4206,10 +4229,24 @@
                         duration: 1.5,
                         delay: 1.5
                     });
+                    gsap.fromTo(".hero-mainpage__socials", {
+                        xPercent: 100
+                    }, {
+                        xPercent: 0,
+                        duration: 1.3,
+                        delay: .5
+                    });
                     gsap.fromTo(".header", {
                         yPercent: -100
                     }, {
                         yPercent: 0,
+                        duration: 1.3,
+                        delay: .5
+                    });
+                    gsap.fromTo(".fascia", {
+                        xPercent: 100
+                    }, {
+                        xPercent: 0,
                         duration: 1.3,
                         delay: .5
                     });

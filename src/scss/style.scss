@@ -42,17 +42,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  &::after {
-    content: '';
-    position: fixed;
-    z-index: 50;
-    width: 7.2rem;
-    height: 100%;
-    top: 0;
-    right: 0;
-    background: rgba(189, 180, 191, 0.1);
-    backdrop-filter: blur(25px);
-  }
 
   // press footer
   > main {
@@ -64,12 +53,16 @@ body {
   }
 }
 
-.main {
-  padding-top: 18rem;
-  transition: padding-top 0.3s ease;
-  ._header-scroll & {
-    padding-top: 10rem;
-  }
+.fascia {
+  position: fixed;
+  z-index: 50;
+  width: 7.2rem;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(189, 180, 191, 0.1);
+  backdrop-filter: blur(25px);
 }
 
 // base styles, templates (patterns), special classes ==========================

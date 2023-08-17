@@ -98,14 +98,10 @@ function initSliders() {
       speed: 800,
       allowTouchMove: false,
       simulateTouch: false,
-      // loop: true,
-
-      // effects
-      // effect: 'fade',
 
       // pagination
       pagination: {
-        el: '.control-popular-mainpage__fraction',
+        el: '#popularFraction',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
           return '0' + current + '/' + '0' + total
@@ -114,8 +110,39 @@ function initSliders() {
 
       // navigation
       navigation: {
-        nextEl: '.control-popular-mainpage__nav-btn_next',
-        prevEl: '.control-popular-mainpage__nav-btn_prev',
+        nextEl: '#popularNext',
+        prevEl: '#popularPrev',
+      },
+
+      // events
+      on: {},
+    })
+  }
+  if (document.querySelector('.offers-mainpage__slider')) {
+    new Swiper('.offers-mainpage__slider', {
+      modules: [Navigation, Pagination],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 2,
+      spaceBetween: 60,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      simulateTouch: false,
+
+      // pagination
+      pagination: {
+        el: '#offersFraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          return '0' + current + '/' + '0' + total
+        },
+      },
+
+      // navigation
+      navigation: {
+        nextEl: '#offersNext',
+        prevEl: '#offersPrev',
       },
 
       // events

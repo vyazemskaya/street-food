@@ -31,6 +31,7 @@
     letter-spacing: 0.56px;
     text-transform: uppercase;
     text-align: center;
+    color: #ffffff;
   }
 
   @media (any-hover: hover) {
@@ -88,18 +89,32 @@
   background-color: #f1f0f9;
   border-radius: 50%;
   transition: all 0.3s ease;
-  svg {
-    width: 3.5rem;
-    height: 3.5rem;
+  &_purple {
+    background-color: $purple;
   }
-
-  @media (any-hover: hover) {
-    &:hover {
-      background-color: $purple;
-      path {
-        stroke: #ffffff;
+  &_hv-purple {
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $purple;
+        path {
+          stroke: #ffffff;
+        }
       }
     }
+  }
+  &_hv-black {
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $black;
+        path {
+          stroke: #ffffff;
+        }
+      }
+    }
+  }
+  svg {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
 
@@ -131,12 +146,66 @@
   }
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+
+  // .link__txt
+
+  &__txt {
+    font-family: 'DrukCyr';
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  // .link__btn
+
+  &__btn {
+  }
+}
+
+.txt {
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5rem;
+  &__fraction {
+    font-family: 'DrukCyr';
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    .nav-btn {
+      border: 1.5px solid rgba(30, 17, 33, 0.1);
+    }
+  }
+}
+
 // =============================================================================
 @keyframes circle-link {
   25% {
     background-color: $red;
   }
-  50% {
+  90% {
     background-color: $orange;
     transform: translate(-50%, -50%) scale(0.95);
   }
