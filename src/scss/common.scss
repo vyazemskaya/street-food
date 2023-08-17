@@ -203,6 +203,24 @@
   }
 }
 
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3rem;
+
+		// .head__title
+
+		&__title {
+		}
+
+		// .head__link
+
+		&__link {
+		}
+}
+
+
 // =============================================================================
 @keyframes circle-link {
   25% {

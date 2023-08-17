@@ -1,4 +1,8 @@
 .mainpage {
+  section {
+    position: relative;
+  }
+
   // .mainpage__hero
 
   &__hero {
@@ -21,11 +25,16 @@
   &__menu {
     margin-bottom: 15rem;
   }
+
+  // .mainpage__news
+
+  &__news {
+    margin-bottom: 15rem;
+  }
 }
 
 // =============================================================================
 .hero-mainpage {
-  position: relative;
   padding-top: 18rem;
   color: #ffffff;
   background-color: $black;
@@ -339,7 +348,6 @@
 
 // =============================================================================
 .popular-mainpage {
-  position: relative;
   background-color: #ffffff;
 
   // .popular-mainpage__container
@@ -353,10 +361,6 @@
 
   &__head {
     margin-bottom: 5.7rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 3rem;
   }
 
   // .popular-mainpage__title
@@ -598,7 +602,6 @@
 
 // =============================================================================
 .offers-mainpage {
-  position: relative;
   padding-top: 15rem;
   padding-bottom: 15rem;
   color: #ffffff;
@@ -627,10 +630,6 @@
 
   &__head {
     margin-bottom: 8.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 3rem;
   }
 
   // .offers-mainpage__title
@@ -819,10 +818,6 @@
 
   &__head {
     margin-bottom: 20.4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 3rem;
   }
 
   // .menu-mainpage__title
@@ -920,5 +915,149 @@
       width: 2.3rem;
       height: 2.3rem;
     }
+  }
+}
+
+// =============================================================================
+.news-mainpage {
+  // .news-mainpage__container
+
+  &__container {
+  }
+
+  // .news-mainpage__head
+
+  &__head {
+    margin-bottom: 9.2rem;
+  }
+
+  // .news-mainpage__slide
+
+  &__slide {
+  }
+}
+
+.slide-news-mainpage {
+  position: relative;
+  display: grid;
+  grid-template-rows: 47.5rem auto;
+  font-family: DrukCyr;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 4rem;
+  background-color: $black;
+  overflow: hidden;
+
+  // .slide-news-mainpage__content
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 3rem 3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.1rem;
+    min-height: 17.5rem;
+    background-color: $purple;
+    border-radius: 4rem;
+  }
+
+  // .slide-news-mainpage__text
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .slide-news-mainpage__date
+
+  &__date {
+    margin-bottom: 2rem;
+    padding: 1rem 1.2rem;
+    align-self: flex-start;
+    font-size: 2rem;
+    letter-spacing: 0.18rem;
+    background-color: $orange;
+    border-radius: 2rem;
+  }
+
+  // .slide-news-mainpage__heading
+
+  &__heading {
+    max-width: 32.8rem;
+    font-size: 3.2rem;
+    line-height: 130%;
+    letter-spacing: 0.096rem;
+    color: #ffffff;
+  }
+
+  // .slide-news-mainpage__link-btn
+
+  &__link-btn {
+    align-self: flex-end;
+    flex: 0 0 10.4rem;
+    svg {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  // .slide-news-mainpage__wrapper
+
+  &__wrapper {
+    position: relative;
+
+    img,
+    .slide-news-mainpage__image::before,
+    .slide-news-mainpage__image::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .slide-news-mainpage__image::before,
+    .slide-news-mainpage__image::after,
+    &::before {
+      content: '';
+      border: 2rem solid rgba(189, 180, 191, 0.1);
+      border-radius: 50%;
+    }
+    .slide-news-mainpage__image::before {
+      width: 49.1rem;
+      height: 49.1rem;
+    }
+    .slide-news-mainpage__image::after {
+      width: 59.2rem;
+      height: 59.2rem;
+    }
+    &::before {
+      width: 69.2rem;
+      height: 69.2rem;
+    }
+  }
+
+  // .slide-news-mainpage__image
+
+  &__image {
+    img {
+      width: 40.2rem;
+      height: 40.2rem;
+      clip-path: circle(50% at 50% 50%);
+    }
+  }
+
+  // .slide-news-mainpage__label
+
+  &__label {
+    padding: 1rem 1.4rem;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    letter-spacing: 0.18rem;
+    color: #ffffff;
+    background-color: $purple;
+    border-radius: 2rem;
   }
 }

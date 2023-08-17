@@ -3986,6 +3986,29 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".news-mainpage__slider")) new core(".news-mainpage__slider", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 3,
+                spaceBetween: 60,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                simulateTouch: false,
+                pagination: {
+                    el: "#newsFraction",
+                    type: "custom",
+                    renderCustom: function(swiper, current, total) {
+                        return "0" + current + "/" + "0" + total;
+                    }
+                },
+                navigation: {
+                    nextEl: "#newsNext",
+                    prevEl: "#newsPrev"
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
