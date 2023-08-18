@@ -4009,6 +4009,29 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".reviews-mainpage__slider")) new core(".reviews-mainpage__slider", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 3,
+                spaceBetween: 60,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                simulateTouch: false,
+                pagination: {
+                    el: "#reviewsFraction",
+                    type: "custom",
+                    renderCustom: function(swiper, current, total) {
+                        return "0" + current + "/" + "0" + total;
+                    }
+                },
+                navigation: {
+                    nextEl: "#reviewsNext",
+                    prevEl: "#reviewsPrev"
+                },
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();

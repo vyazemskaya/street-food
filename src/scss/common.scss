@@ -201,6 +201,22 @@
       border: 1.5px solid rgba(30, 17, 33, 0.1);
     }
   }
+  &_white {
+    .control__fraction {
+      color: #ffffff;
+    }
+    .nav-btn {
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      &.swiper-button-disabled {
+        path {
+          stroke: rgba(255, 255, 255, 0.15);
+        }
+      }
+      path {
+        stroke: #ffffff;
+      }
+    }
+  }
 }
 
 .head {
@@ -209,17 +225,16 @@
   align-items: center;
   column-gap: 3rem;
 
-		// .head__title
+  // .head__title
 
-		&__title {
-		}
+  &__title {
+  }
 
-		// .head__link
+  // .head__link
 
-		&__link {
-		}
+  &__link {
+  }
 }
-
 
 // =============================================================================
 @keyframes circle-link {
