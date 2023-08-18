@@ -50,10 +50,10 @@ utilities.tabs()
 import * as forms from './files/forms/forms.js'
 
 // form fields
-// forms.formFieldsInit({ viewPass: false });
+forms.formFieldsInit({ viewPass: false })
 
 // submit form
-// forms.formSubmit();
+forms.formSubmit()
 
 // quantity module
 // forms.formQuantity();

@@ -346,17 +346,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
 
       // hero socials
-      gsap.fromTo(
-        '.hero-mainpage__socials',
-        {
-          xPercent: 100,
-        },
-        {
-          xPercent: 0,
-          duration: 1.3,
-          delay: 0.5,
-        }
-      )
+      if (document.querySelector('.hero-mainpage__socials')) {
+        gsap.fromTo(
+          '.hero-mainpage__socials',
+          {
+            xPercent: 100,
+          },
+          {
+            xPercent: 0,
+            duration: 1.3,
+            delay: 0.5,
+          }
+        )
+      }
 
       // header
       gsap.fromTo(
@@ -372,17 +374,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
       )
 
       // aside
-      gsap.fromTo(
-        '.fascia',
-        {
-          xPercent: 100,
-        },
-        {
-          xPercent: 0,
-          duration: 1.3,
-          delay: 0.5,
-        }
-      )
+      if (document.querySelector('.fascia')) {
+        gsap.fromTo(
+          '.fascia',
+          {
+            xPercent: 100,
+          },
+          {
+            xPercent: 0,
+            duration: 1.3,
+            delay: 0.5,
+          }
+        )
+      }
     })
   }
 })

@@ -124,6 +124,12 @@
   // .hero-mainpage__socials
 
   &__socials {
+    .socials {
+      padding-bottom: 7rem;
+    }
+    .socials__list {
+      justify-content: flex-end;
+    }
   }
 }
 
@@ -291,62 +297,6 @@
       height: 90rem;
       .st0 {
         stroke-width: 200;
-      }
-    }
-  }
-}
-
-.socials-hero-mainpage {
-  padding-bottom: 7rem;
-
-  // .socials-hero-mainpage__list
-
-  &__list,
-  &__link {
-    display: flex;
-    align-items: center;
-  }
-
-  &__list {
-    justify-content: flex-end;
-    flex-direction: column;
-    row-gap: 5.3rem;
-    height: 100%;
-  }
-
-  // .socials-hero-mainpage__item
-
-  &__item {
-  }
-
-  // .socials-hero-mainpage__link
-
-  &__link {
-    column-gap: 0.8rem;
-    font-family: AkzidenzGroteskPro;
-    font-weight: 700;
-    line-height: 120%;
-    text-transform: uppercase;
-    -webkit-writing-mode: tb-rl;
-    -ms-writing-mode: tb-rl;
-    writing-mode: tb-rl;
-    transform: rotate(360deg);
-    &::before {
-      content: '';
-      width: 2.4rem;
-      height: 2.4rem;
-      background-size: 2.4rem 2.4rem;
-      background-repeat: no-repeat;
-      transform: rotate(90deg);
-    }
-    &_ok {
-      &::before {
-        background-image: url(@img/icons/socials/ok.svg);
-      }
-    }
-    &_vk {
-      &::before {
-        background-image: url(@img/icons/socials/vk.svg);
       }
     }
   }

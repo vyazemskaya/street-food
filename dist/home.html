@@ -10,7 +10,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230818124604">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230818150848">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
 						</li>
 					</ul>
 				</nav>
-				<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" aria-hidden="true" alt="" title="Логотип" class="header__logo-img" /></picture></a>
+				<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" aria-hidden="true" alt="" class="header__logo-img" /></picture></a>
 				<nav class="header__menu menu">
 					<ul class="menu__list">
 						<li class="menu__item">
@@ -229,13 +229,13 @@
 						<div class="hero-mainpage__fraction"></div>
 					</div>
 				</div>
-				<div class="hero-mainpage__socials socials-hero-mainpage aside">
-					<ul class="socials-hero-mainpage__list">
-						<li class="socials-hero-mainpage__item">
-							<a href="#" target="_blank" class="socials-hero-mainpage__link socials-hero-mainpage__link_ok">одноклассники</a>
+				<div class="hero-mainpage__socials socials aside">
+					<ul class="socials__list">
+						<li class="socials__item">
+							<a href="#" target="_blank" class="socials__link socials__link_ok">одноклассники</a>
 						</li>
-						<li class="socials-hero-mainpage__item">
-							<a href="#" target="_blank" class="socials-hero-mainpage__link socials-hero-mainpage__link_vk">vkontakte</a>
+						<li class="socials__item">
+							<a href="#" target="_blank" class="socials__link socials__link_vk">vkontakte</a>
 						</li>
 					</ul>
 				</div>
@@ -1169,7 +1169,9 @@
 						</div>
 					</div>
 					<div class="reviews-mainpage__links links-reviews-mainpage">
-						<h3 class="links-reviews-mainpage__heading">смотрите отзывы о нас на:</h3>
+						<h3 class="links-reviews-mainpage__heading">
+							смотрите отзывы о нас на:
+						</h3>
 						<ul class="links-reviews-mainpage__list">
 							<li class="links-reviews-mainpage__item">
 								<a href="#" class="links-reviews-mainpage__link">
@@ -1219,14 +1221,117 @@
 		</main>
 		<div class="fascia"></div>
 		<footer class="footer">
-			<div class="footer__container">
+			<div class="footer__container container">
+				<div class="footer__body">
+					<div class="footer__nav nav-footer">
+						<div class="nav-footer__logo-wrap">
+							<a href="#" class="nav-footer__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" aria-hidden="true" alt="" /></picture></a>
+						</div>
+						<nav class="nav-footer__nav-container">
+							<ul class="nav-footer__list txt">
+								<li class="nav-footer__item">
+									<ul class="nav-footer__sublist sublist-nav-footer">
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link sublist-nav-footer__link_labeled"><span>меню</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>новости</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>акции</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>на карте</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-footer__item">
+									<ul class="nav-footer__sublist sublist-nav-footer">
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>о компании</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>вакансии</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>контакты</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>юридическая информация</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-footer__item">
+									<ul class="nav-footer__sublist sublist-nav-footer">
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>vkontakte</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>яндекс.еда</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>delivery club</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-footer__item">
+									<h4 class="nav-footer__heading">по вопросам сотрудничества:</h4>
+									<ul class="nav-footer__sublist nav-footer__sublist_contacts sublist-nav-footer">
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>валентина</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="#" class="sublist-nav-footer__link"><span>территориальный управляющий</span></a>
+										</li>
+										<li class="sublist-nav-footer__item">
+											<a href="mailto:info@streetfood.vip" class="sublist-nav-footer__link"><span>info@streetfood.vip</span></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="footer__newsletter newsletter-footer">
+						<h2 class="newsletter-footer__title">
+							подпишитесь на нашу рассылку <br />
+							и будьте в курсе всех новинок меню!
+						</h2>
+						<form data-dev action="#" class="newsletter-footer__form form">
+							<input autocomplete="off" type="text" name="form[]" data-error placeholder="введите email" class="newsletter-footer__input input" />
+							<button type="submit" class="newsletter-footer__button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+									<path d="M19.8418 8.15234L28.188 16.4986L19.8418 24.8448" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M4.8125 16.5H27.9537" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer__copyright copyright-footer">
+				<div class="copyright-footer__container container">
+					<p class="copyright-footer__text">© Все права защищены</p>
+					<a href="#" class="copyright-footer__text">Политика обработки персональных данных</a>
+					<p class="copyright-footer__text">ООО «Стрит Фуд»</p>
+				</div>
+			</div>
+			<div class="footer__socials socials aside">
+				<ul class="socials__list">
+					<li class="socials__item">
+						<a href="#" target="_blank" class="socials__link socials__link_ok">одноклассники</a>
+					</li>
+					<li class="socials__item">
+						<a href="#" target="_blank" class="socials__link socials__link_vk">vkontakte</a>
+					</li>
+				</ul>
 			</div>
 		</footer>
+
 	</div>
-	<script src="https://code.jquery.com/jquery-3.7.0.min.js?_v=20230818124604"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20230818124604"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js?_v=20230818124604"></script>
-	<script src="js/app.min.js?_v=20230818124604"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js?_v=20230818150848"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20230818150848"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js?_v=20230818150848"></script>
+	<script src="js/app.min.js?_v=20230818150848"></script>
 
 </body>
 

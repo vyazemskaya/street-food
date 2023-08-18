@@ -11,18 +11,27 @@ input:focus {
   outline: none;
 }
 
+.input,
+.input::placeholder {
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  cursor: text;
+}
+
 .input {
   display: block;
   width: 100%;
-  padding: 0px 20px;
-  border-radius: 0 !important;
-  border: 1px solid #eee;
+  color: $black;
+  &::placeholder {
+    color: rgba(47, 32, 60, 0.35);
+  }
   &._form-focus {
   }
   &._form-error {
   }
 }
 textarea.input {
-  padding: 0px 0px;
+  padding: 0;
   resize: none;
 }
