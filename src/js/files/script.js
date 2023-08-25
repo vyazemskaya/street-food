@@ -1,24 +1,44 @@
-import { _slideDown, _slideUp, _slideToggle } from './functions.js'
+import {
+  _slideDown,
+  _slideUp,
+  _slideToggle,
+  removeClasses,
+} from './functions.js'
 import { modules } from './modules.js'
 
 document.addEventListener('DOMContentLoaded', function (event) {
   window.onload = function () {
-    if (document.querySelectorAll('.popular-mainpage__slide')) {
-      const popularSlides = document.querySelectorAll(
-        '.popular-mainpage__slide'
+    if (document.querySelectorAll('.filters-map-mainpage__button').length) {
+      const mapFilters = document.querySelectorAll(
+        '.filters-map-mainpage__button'
       )
-
-      // $('.popular-mainpage__slide').each(function (index, item) {
-      //   const slideInfo = $(item).find('.slide-popular-mainpage__info')[0]
-
-      //   $(item).on('mouseover', function (event) {
-      //     $(slideInfo).animate({ height: 'auto' }, 10)
-      //   })
-      //   $(item).on('mouseout', function (event) {
-      //     $(slideInfo).animate({ height: 0 }, 10)
-      //   })
-      // })
+      mapFilters.forEach(mapFilter => {
+        mapFilter.addEventListener('click', function () {
+          removeClasses(mapFilters, '_active')
+          mapFilter.classList.add('_active')
+        })
+      })
     }
+    // if (document.querySelectorAll('.privileges-mainpage__item').length) {
+    //   const privileges = document.querySelectorAll('.privileges-mainpage__item')
+    //   const isHover = e => e.parentElement.querySelector(':hover') === e
+    //   const checkHover = arr => {
+    //     arr.forEach(item => {
+    //       const itemImgWrap = item.querySelector(
+    //         '.item-privileges-mainpage__img-wrap'
+    //       )
+    //       const itemInfo = item.querySelector(
+    //         '.item-privileges-mainpage__info-wrap'
+    //       )
+    //       const height = itemImgWrap.offsetHeight
+    //       const hovered = isHover(item)
+    //       itemImgWrap.style.bottom = `${itemInfo.offsetHeight}px`
+    //       itemImgWrap.style.height = `${height + itemInfo.offsetHeight}px`
+    //       checkHover.hovered = hovered
+    //     })
+    //   }
+    //   document.addEventListener('mouseenter', checkHover.bind(this, privileges))
+    // }
 
     window.requestAnimationFrame(function () {
       const setClasses = (arr, activeIndex) => {

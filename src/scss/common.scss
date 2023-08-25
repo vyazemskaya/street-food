@@ -290,6 +290,11 @@
   }
 }
 
+.bg-black {
+  color: #ffffff;
+  background-color: $black;
+}
+
 // =============================================================================
 @keyframes circle-link {
   25% {
