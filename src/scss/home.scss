@@ -1,7 +1,6 @@
 .mainpage {
   section {
     position: relative;
-    margin-bottom: 15rem;
   }
 
   // .mainpage__hero
@@ -12,27 +11,31 @@
   // .mainpage__popular
 
   &__popular {
+    margin-bottom: 15rem;
   }
 
   // .mainpage__offers
 
   &__offers {
-    margin-bottom: 17.6rem;
+    margin-bottom: 15.7rem;
   }
 
   // .mainpage__menu
 
   &__menu {
+    margin-bottom: 15rem;
   }
 
   // .mainpage__news
 
   &__news {
+    margin-bottom: 15rem;
   }
 
   // .mainpage__reviews
 
   &__reviews {
+    margin-bottom: 15rem;
   }
 
   // .mainpage__map
@@ -310,7 +313,7 @@
   // .popular-mainpage__container
 
   &__container {
-    padding-top: 20rem;
+    padding-top: 14.4rem;
     overflow: hidden;
   }
 
@@ -745,9 +748,6 @@
 
 // =============================================================================
 .menu-mainpage {
-  padding-top: 15.7rem;
-  padding-bottom: 15rem;
-
   // .menu-mainpage__container
 
   &__container {
@@ -842,6 +842,7 @@
     font-size: 3.2rem;
     line-height: 130%;
     letter-spacing: 0.03em;
+    color: #ffffff;
     text-transform: uppercase;
   }
 
@@ -1003,7 +1004,7 @@
 
 // =============================================================================
 .privileges-mainpage {
-  padding-top: 19rem;
+  padding-top: 18rem;
   padding-bottom: 15rem;
 
   // .privileges-mainpage__container
@@ -1624,19 +1625,19 @@
   &__button {
     display: flex;
     align-items: center;
-    column-gap: 1rem;
     min-width: 10.4rem;
     border-radius: 4rem;
     background-color: #ffffff;
     transition: background-color 0.3s ease;
-    &::after {
-      content: '';
-      width: 0.9rem;
-      height: 0.9rem;
-      border-radius: 50%;
-    }
     &:not(&_all) {
       padding: 0.5rem 2.3rem 0.5rem 0.5rem;
+      column-gap: 1rem;
+      &::after {
+        content: '';
+        width: 0.9rem;
+        height: 0.9rem;
+        border-radius: 50%;
+      }
     }
     &_all {
       justify-content: center;
